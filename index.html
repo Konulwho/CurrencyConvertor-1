@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="navbar">
+    <div class="row w-100">
+      <div class="col-lg-2 col-md-4 col-sm-6 img">
+        <img src="./img/logovalyuta.png" alt="">
+      </div>
+      <div class="col-lg-8 nav-text">
+        <ul>
+          <li class="active">БАНК</li>
+          <li>БИЗНЕС</li>
+          <li>ИНВЕСТИЦИИ</li>
+          <li>СТРАХОВАНИЕ</li>
+          <li>МОБАЙЛ</li>
+          <li>ПУТЕШЕСТВИЯ</li>
+          <li>РАЗВЛЕЧЕНИЯ</li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 voyti">
+        <span class="button">ВОЙТИ</span>
+      </div>
+    </div>
+  </div>
+  <div id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="intro-header">
+          <p class="intro-text">Конвертер валют онлайн</p>
+        </div>
+        <div id="from" class="col-lg-6 col-md-12">
+          <p>У меня есть </p>
+          <div class="card-custom">
+            <ul class="list-group d-flex flex-row ">
+              <li class="list-group-item first-card"><button>RUB</button></li>
+              <li class="list-group-item first-card"><button>USD</button></li>
+              <li class="list-group-item first-card"><button>EUR</button></li>
+              <li class="list-group-item first-card"><button>AZN</button></li>
+            </ul>
+          </div>
+          <div class="card card-custom mt-4">
+            <div class="card-body">
+              <input class="card-input money" type="number" id="inpt"/>
+              <p class="card-text money-text"></p>
+            </div>
+          </div>
+        </div>
+        <div id="to" class="col-lg-6 col-md-12">
+          <p>Хочу приобрести</p>
+          <div class="card-custom">
+            <ul class="list-group d-flex flex-row ">
+              <li class="list-group-item second-card"><button>RUB</button></li>
+              <li class="list-group-item second-card"><button>USD</button></li>
+              <li class="list-group-item second-card"><button>EUR</button></li>
+              <li class="list-group-item second-card"><button>AZN</button></li>
+            </ul>
+          </div>
+          <div class="card card-custom mt-4">
+            <div class="card-body">
+              <h5 class="card-title money">0.0000</h5>
+              <p class="card-text money-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-75 mt-3 text-center">
+        <h4 class="text-danger" id="error"></h4>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
