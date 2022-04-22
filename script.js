@@ -1,4 +1,4 @@
-let aCrypto, bCrypto;
+let aCrypto='USD', bCrypto='RUB';
 let inpt = document.getElementById("inpt");
 let firstCardEl = document.querySelectorAll(".first-card button");
 let secondCardEl = document.querySelectorAll(".second-card button");
@@ -16,7 +16,7 @@ firstCardEl.forEach(x=>x.addEventListener('click', ()=>{
     if(bCrypto)
     {
         error.innerText="";
-        getCryptoValue(aCrypto,bCrypto,inpt.value);
+        getCryptoValue(aCrypto,bCrypto,inpt.value); inpt.focus();
     }
     else
     error.innerText="Please, select cryptos!";
@@ -30,13 +30,13 @@ secondCardEl.forEach(x=>x.addEventListener('click', ()=>{
     if(aCrypto)
     {
         error.innerText="";
-        getCryptoValue(aCrypto,bCrypto,inpt.value);
+        getCryptoValue(aCrypto,bCrypto,inpt.value); inpt.focus();
     }
     else
     error.innerText="Please, select cryptos!";
 }))
 
-inpt.addEventListener("keypress", ()=>{
+inpt.addEventListener("keyup", ()=>{
     if(!aCrypto || !bCrypto)
     error.innerText="Please, select cryptos!";
     else
