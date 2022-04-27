@@ -213,6 +213,10 @@ ul {
     width: 280px;
 }
 
+.nav-item a {
+    color: #959BA4;
+}
+
 @media only screen and (max-width: 960px) {
     .nav-text {
         display: none;
@@ -235,5 +239,5 @@ ul {
         width: 340px;
         font-size: 23px;
     }
-
+    
 }
