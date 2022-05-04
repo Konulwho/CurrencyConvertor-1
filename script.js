@@ -13,13 +13,19 @@ firstCardEl.forEach(x=>x.addEventListener('click', ()=>{
     firstCardEl.forEach(x=>{x.classList.remove("active"); x.parentElement.style.backgroundColor = "#fff"});
     x.classList.add("active");
     x.parentElement.style.backgroundColor = "#833AE0";
-    if(bCrypto)
+    if(aCrypto==bCrypto)
     {
-        error.innerText="";
-        getCryptoValue(aCrypto,bCrypto,inpt[0].value, 0);
+        inpt[0].value!=null ? inpt[1].value = inpt[0].value : inpt[0].value = inpt[1].value;
     }
-    else
-    error.innerText="Please, select cryptos!";
+    else{
+        if(bCrypto)
+        {
+            error.innerText="";
+            getCryptoValue(aCrypto,bCrypto,inpt[0].value, 0);
+        }
+        else
+            error.innerText="Please, select cryptos!";
+    }
 }))
 
 secondCardEl.forEach(x=>x.addEventListener('click', ()=>{
@@ -27,19 +33,29 @@ secondCardEl.forEach(x=>x.addEventListener('click', ()=>{
     secondCardEl.forEach(x=>{x.classList.remove("active"); x.parentElement.style.backgroundColor = "#fff"});
     x.classList.add("active");
     x.parentElement.style.backgroundColor = "#833AE0";
-    if(aCrypto)
+    if(aCrypto==bCrypto)
     {
-        error.innerText="";
-        getCryptoValue(aCrypto,bCrypto, inpt[1].value , 1);
+        inpt[0].value!=null ? inpt[1].value = inpt[0].value : inpt[0].value = inpt[1].value;
     }
-    else
-    error.innerText="Please, select cryptos!";
+    else{
+        if(aCrypto)
+        {
+            error.innerText="";
+            getCryptoValue(aCrypto,bCrypto, inpt[1].value , 1);
+        }
+        else
+            error.innerText="Please, select cryptos!";
+    }
 }))
 
 inpt.forEach(function (item, index){
     item.addEventListener("keyup", ()=>{
         if(!aCrypto || !bCrypto)
         error.innerText="Please, select cryptos!";
+        else if(aCrypto==bCrypto)
+        {
+            inpt[0].value!=null ? inpt[1].value = inpt[0].value : inpt[0].value = inpt[1].value;
+        }
         else
         {
             getCryptoValue(aCrypto,bCrypto,item.value, index);
@@ -55,7 +71,7 @@ function getCryptoValue(base, target, value, inputId)
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
-
+    console.log("Request Sended!");
     request.onload = function() {
     let response = request.response;
     oneMoney[0].innerText = `1 ${base} = ${response.rates[target]} ${target}`;
